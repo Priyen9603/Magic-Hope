@@ -1,0 +1,25 @@
+<!-- templates/thank_you.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <main class="container text-center mt-5">
+        <h1>Thank You!</h1>
+        <p>Your payment was successful. You can now start your course!</p>
+        <a href="{% url 'course_list' %}" class="btn btn-primary">Go to Courses</a>
+    </main>
+    <footer class="bg-primary text-white text-center py-4 mt-5">
+        <p>&copy; 2024 Magic Hope</p>
+    </footer>
+    <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

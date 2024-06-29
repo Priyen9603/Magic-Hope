@@ -1,0 +1,40 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'courses.css' %}">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile_view' %}">User Profile</a></li>
+                <li><a href="{% url 'course_list' %}">Courses</a></li>
+                <li><a href="{% url 'discussion_forum' %}">Discussion Forum</a></li>
+                <li><a href="{% url 'support' %}">Support</a></li>
+                <li><a href="{% url 'counselling' %}">Counselling</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Payment</h1>
+        <p>Thank you for enrolling. Please proceed with the payment.</p>
+        <form id="payment-form">
+            <div id="card-element"></div>
+            <button id="submit">Pay</button>
+            <p id="payment-response"></p>
+        </form>
+        <script src="{% static 'js/payment.js' %}"></script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Magic Hope</p>
+    </footer>
+</body>
+</html>

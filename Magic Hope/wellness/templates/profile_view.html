@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'profile_view' %}?edit=true">Edit Profile</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile-section">
+            {% if view_mode %}
+                <h1>Your Profile</h1>
+                <p><strong>Name:</strong> {{ form.instance.name }}</p>
+                <p><strong>Phone Number:</strong> {{ form.instance.phone_number }}</p>
+                <p><strong>Interests:</strong> {{ form.instance.interests }}</p>
+                <p><strong>Goals:</strong> {{ form.instance.goals }}</p>
+                <p><strong>Preferred Communication Style:</strong> {{ form.instance.communication_styles }}</p>
+                <a href="{% url 'profile_view' %}?edit=true" class="edit-button">Edit Profile</a>
+            {% else %}
+                <h1>Edit Your Profile</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="submit-button">Save Changes</button>
+                </form>
+                <a href="{% url 'profile_view' %}" class="view-button">View Profile</a>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Magic Hope</p>
+    </footer>
+</body>
+</html>

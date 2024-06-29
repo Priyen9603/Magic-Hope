@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counseling Services</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'counseling.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="{% url 'home' %}">Magic Hope</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile_view' %}">User Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'counseling' %}">Counseling</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">Counseling Services</h1>
+        <p class="text-center mb-5">Meet our expert therapists and counselors. Book an appointment to start your journey towards mental wellness.</p>
+        <div class="row">
+            <!-- Therapist 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/therapist1.jpg' %}" class="card-img-top" alt="Therapist 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. Jane Doe</h5>
+                        <p class="card-text">Specializes in Cognitive Behavioral Therapy (CBT) and Anxiety Management. Dr. Jane provides a supportive and empathetic environment to help you overcome challenges.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#bookAppointmentModal" data-name="Dr. Jane Doe" data-specialty="Cognitive Behavioral Therapy (CBT), Anxiety Management">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Therapist 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/therapist2.jpg' %}" class="card-img-top" alt="Therapist 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mr. John Smith</h5>
+                        <p class="card-text">Expert in Stress Management and Mindfulness Techniques. Mr. John helps clients develop effective coping strategies and achieve mental clarity.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#bookAppointmentModal" data-name="Mr. John Smith" data-specialty="Stress Management, Mindfulness Techniques">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Therapist 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/therapist3.jpg' %}" class="card-img-top" alt="Therapist 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. Emily Clark</h5>
+                        <p class="card-text">Specialist in Depression and Self-Care Strategies. Dr. Emily offers personalized support to help you manage depression and build a self-care routine.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#bookAppointmentModal" data-name="Dr. Emily Clark" data-specialty="Depression, Self-Care Strategies">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookAppointmentModal" tabindex="-1" role="dialog" aria-labelledby="bookAppointmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookAppointmentModalLabel">Book an Appointment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="therapistName">Therapist</label>
+                            <input type="text" class="form-control" id="therapistName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialty">Specialty</label>
+                            <input type="text" class="form-control" id="specialty" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Date</label>
+                            <input type="date" class="form-control" id="appointmentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentTime">Time</label>
+                            <input type="time" class="form-control" id="appointmentTime" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-primary text-white text-center py-4 mt-5">
+        <p>&copy; 2024 Magic Hope</p>
+    </footer>
+    <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'counseling.js' %}"></script>
+</body>
+</html>

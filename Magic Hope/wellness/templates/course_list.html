@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'courses.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="{% url 'home' %}">Magic Hope</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile_view' %}">User Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'course_list' %}">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">Our Courses</h1>
+        <p class="text-center mb-5">Explore our range of mental wellness courses designed to support your journey towards better mental health.</p>
+        <div class="row">
+            <!-- Sample Course 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/Mindfulness Meditation for Beginners.jpg' %}" class="card-img-top" alt="Mindfulness Meditation">
+                    <div class="card-body">
+                        <h5 class="card-title">Mindfulness Meditation for Beginners</h5>
+                        <p class="card-text">Learn the fundamentals of mindfulness meditation to manage stress and anxiety. This course offers practical techniques and guided meditations to help you stay present and calm.</p>
+                        <p class="card-text"><strong>Price:</strong> $29.99</p>
+                        <a href="{% url 'course_detail' 1 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Course 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/Mental Health Essentials.jpg' %}" class="card-img-top" alt="Mental Health Essentials">
+                    <div class="card-body">
+                        <h5 class="card-title">Mental Health Essentials</h5>
+                        <p class="card-text">This course covers essential concepts in mental health, including recognizing signs of mental illness, strategies for self-care, and how to seek professional help.</p>
+                        <p class="card-text"><strong>Price:</strong> $49.99</p>
+                        <a href="{% url 'course_detail' 2 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Course 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/Self-Care Strategies for Stress Relief.jpg' %}" class="card-img-top" alt="Self-Care Strategies">
+                    <div class="card-body">
+                        <h5 class="card-title">Self-Care Strategies for Stress Relief</h5>
+                        <p class="card-text">Explore effective self-care techniques to reduce stress and enhance your well-being. This course provides practical tools for creating a personalized self-care routine.</p>
+                        <p class="card-text"><strong>Price:</strong> $39.99</p>
+                        <a href="{% url 'course_detail' 3 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Course 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/Anxiety Management Techniques.png' %}" class="card-img-top" alt="Anxiety Management">
+                    <div class="card-body">
+                        <h5 class="card-title">Anxiety Management Techniques</h5>
+                        <p class="card-text">Discover proven methods for managing anxiety and improving mental resilience. This course includes evidence-based techniques and exercises to help you cope with anxiety.</p>
+                        <p class="card-text"><strong>Price:</strong> $34.99</p>
+                        <a href="{% url 'course_detail' 4 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Course 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/Cognitive Behavioral Therapy (CBT) Techniques.jpeg' %}" class="card-img-top" alt="Cognitive Behavioral Therapy">
+                    <div class="card-body">
+                        <h5 class="card-title">Cognitive Behavioral Therapy (CBT) Techniques</h5>
+                        <p class="card-text">Learn CBT techniques to challenge negative thinking patterns and develop healthier ways of coping. This course covers both theory and practical applications of CBT.</p>
+                        <p class="card-text"><strong>Price:</strong> $59.99</p>
+                        <a href="{% url 'course_detail' 5 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Course 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'images/Introduction to Positive Psychology.jpg' %}" class="card-img-top" alt="Positive Psychology">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to Positive Psychology</h5>
+                        <p class="card-text">Explore the principles of positive psychology and how they can be applied to improve your life. This course focuses on building strengths and fostering happiness.</p>
+                        <p class="card-text"><strong>Price:</strong> $44.99</p>
+                        <a href="{% url 'course_detail' 6 %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-primary text-white text-center py-4 mt-5">
+        <p>&copy; 2024 Magic Hope</p>
+    </footer>
+    <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

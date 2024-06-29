@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment with {{ counselor.name }}</title>
+    <link rel="stylesheet" href="{% static 'home1.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Book Appointment</h1>
+    </header>
+    <main>
+        <h2>Book an Appointment with {{ counselor.name }}</h2>
+        <p>Speciality: {{ counselor.speciality }}</p>
+        <form method="post">
+            {% csrf_token %}
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            <button type="submit" class="book-btn">Confirm Appointment</button>
+        </form>
+    </main>
+</body>
+</html>

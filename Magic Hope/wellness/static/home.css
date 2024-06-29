@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary-color: #3a1d9b; /* Deep Purple */
+    --secondary-color: #5c2f91; /* Purple */
+    --accent-color: #f9a825; /* Golden Yellow */
+    --background-gradient: linear-gradient(135deg, #3a1d9b, #5c2f91);
+    --card-bg: rgba(255, 255, 255, 0.8); /* Slightly Transparent White */
+    --text-color: #333;
+    --header-bg: rgba(0, 0, 0, 0.8); /* Semi-Transparent Black */
+    --footer-bg: #222;
+    --hover-shadow: rgba(0, 0, 0, 0.5);
+    --cta-bg: #f9a825; /* Golden Yellow */
+    --cta-text: #111;
+    --button-hover-bg: #e4a418; /* Darker Golden Yellow */
+    --link-hover-color: #f0f0f0;
+    --font-main: 'Montserrat', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--header-bg);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    transition: background 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+nav ul li a:hover {
+    color: var(--link-hover-color);
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    padding: 120px 20px 60px; /* Extra space for fixed header */
+    color: var(--text-color);
+}
+
+.welcome-section {
+    margin-bottom: 60px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.welcome-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.welcome-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: var(--cta-bg);
+    color: var(--cta-text);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--hover-shadow);
+}
+
+.quote-section {
+    margin-bottom: 60px;
+    font-style: italic;
+    animation: fadeInUp 1s 0.5s ease-out;
+}
+
+blockquote {
+    font-size: 1.4em;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+}
+
+blockquote::before {
+    content: "\201C";
+    font-size: 4em;
+    color: var(--accent-color);
+    position: absolute;
+    top: -30px;
+    left: 20px;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote span {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.features-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.feature {
+    width: 300px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s 1s ease-out;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--hover-shadow);
+}
+
+.feature h2 {
+    margin-top: 10px;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.feature p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.support-icon {
+    background: url('/static/images/support-icon.png') no-repeat center center;
+}
+
+.courses-icon {
+    background: url('/static/images/courses-icon.png') no-repeat center center;
+}
+
+.community-icon {
+    background: url('/static/images/community-icon.png') no-repeat center center;
+}
+
+.testimonials-section {
+    margin-bottom: 60px;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.testimonial {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s 1.5s ease-out;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.resources-section {
+    margin-bottom: 60px;
+}
+
+.resources-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.resource {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s 2s ease-out;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resource h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.resource p {
+    font-size: 1.1em;
+}
+
+.resource-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+    color: var(--link-hover-color);
+}
+
+.signup-section {
+    background: var(--card-bg);
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    animation: fadeInUp 1s 2.5s ease-out;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup-section h2 {
+    margin-top: 0;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.signup-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.signup-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signup-section input {
+    padding: 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.signup-section button {
+    padding: 15px;
+    background: var(--cta-bg);
+    color: var(--cta-text);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-section button:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--hover-shadow);
+}
+
+footer {
+    background: var(--footer-bg);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid #444;
+    margin-top: auto;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .features-section {
+        flex-direction: column;
+    }
+
+    .feature {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .quote-section {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button, .signup-button {
+        padding: 12px 20px;
+    }
+
+    .signup-button {
+        font-size: 0.9em;
+    }
+}
+.welcome-section {
+    margin-bottom: 60px;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+    position: relative;
+    padding: 120px 20px; /* Extra padding for mobile responsiveness */
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+}
+
+/* Add background image */
+.welcome-section::before {
+    content: "";
+    background: url('/static/images/welcome-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+/* Add a color overlay */
+.welcome-section::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Heading */
+.welcome-section h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff; /* White color for better contrast */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraph */
+.welcome-section p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #f0f0f0; /* Light text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: var(--cta-bg);
+    color: var(--cta-text);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px var(--hover-shadow);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--hover-shadow);
+}

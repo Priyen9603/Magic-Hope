@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Signup Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<style>
+
+    {% comment %} ali {% endcomment %}
+    .jumbotron {
+        background-image: linear-gradient(to right, #4796ff);
+        color: #333333;
+        padding:20px;
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        width:100%;
+        margin-bottom:40px;
+    }
+    
+    .jumbotron h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInDown 1s ease;
+    }
+    
+    .jumbotron p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        animation: fadeInUp 1s ease;
+    }
+    @keyframes fadeInDown {
+      0% {
+          opacity: 0;
+          transform: translateY(-20px);
+      }
+      100% {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      0% {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      100% {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+    }
+    @media (max-width: 992px) {
+      .jumbotron {
+          padding: 60px 20px;
+      }
+    
+      .jumbotron h1 {
+          font-size: 2.5rem;
+      }
+    
+      .jumbotron p {
+          font-size: 1.3rem;
+      }
+    }
+    @media (max-width: 576px) {
+      .row {
+          grid-template-columns: 1fr;
+      }
+    
+      .jumbotron {
+          padding: 50px 20px;
+      }
+    
+      .jumbotron h1 {
+          font-size: 2rem;
+      }
+    
+      .jumbotron p {
+          font-size: 1.1rem;
+      }
+    }
+    {% comment %} .image-container {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 20px; /* Adjust as needed */
+    } {% endcomment %}
+    
+    {% comment %} .lion-image {
+      width: 150px; /* Size of your image */
+      height: 150px; /* Size of your image */
+      object-fit: contain; /* Maintain aspect ratio */
+      border-radius: 50%; /* Make it round */
+      background-color: #fff; /* Optional: Set a background color */
+    }             {% endcomment %}
+    {% comment %} ali {% endcomment %}
+
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    html, body {
+      height: 70vh; /* Ensure body takes full height */
+      margin: 0; /* Ensure no margin to prevent white gaps */
+      background-image: linear-gradient(to bottom right, #4796ff, #4796ff); /* Set background here */
+  }
+  .container {
+    height: 100%; /* Use full height to ensure background covers */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Ensure no overflow */
+}
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        width: 100%; /* Responsive to container size */
+        max-width: 400px; /* Maximum width for smaller screens */
+        background-color: #ffffff;
+        padding: 20px; /* Extra padding for internal space */
+    }
+
+    .card_title {
+        text-align: center;
+    }
+
+    .card_title h1 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .form {
+        margin-top: 20px; /* Spacing from the title */
+    }
+
+    .form input {
+        margin: 10px 0;
+        width: 100%;
+        background-color: #e2e2e2;
+        border: none;
+        outline: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+    }
+
+    .form button {
+        background-color: #4796ff;
+        color: #ffffff;
+        font-size: 16px;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        padding: 8px 15px;
+        width: 100%;      /* Padding for the button */
+        cursor: pointer; /* Indicate it's clickable */
+        transition: 0.3s ease; /* Animation for hover effect */
+    }
+
+    .form button:hover {
+        background-color: #4796ff; /* Change on hover */
+    }
+
+    .card_terms {
+        text-align: center; /* Center-align text */
+        margin-top: 20px; /* Spacing from form */
+    }
+
+    .card_terms a {
+        color: #4796ff;
+        text-decoration: none;
+    }
+
+    .card_terms a:hover {
+        text-decoration: underline; /* Indicate hover on link */
+    }
+
+    .error-message {
+        color: red;
+        text-align: center;
+        margin-top: 10px; /* Spacing after form */
+    }
+</style>
+
+<body>
+
+    {% comment %} ali {% endcomment %}
+  <div class="jumbotron text-center">
+    {% comment %} <img src="static/lion3.png" alt="lion image" style="float:left; margin-right:30px; width:250px; height:150px; margin-left:0px;">
+    <img src="static/lion2.png" alt="lion image" style="float:right; margin-right:30px; width:150px; height:150px; margin-left:20px;"> {% endcomment %}
+    <h1 class="display-3 text-center">Magic Hope</h1>
+    {% comment %} <p class="lead text-center">(Only For Law Enforcement Agencies)</p> {% endcomment %}
+  </div>
+
+     {% comment %} ali {% endcomment %}
+    <div class="container">
+        <div class="card">
+            <div class="card_title">
+                <h1>Signup</h1>
+                <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+            </div>
+            <div class="form">
+                <form id="signupForm" action="/signup" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Enter username" id="user" required>
+                    <input type="email" name="email" placeholder="Enter email" id="email" required>
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <button type="submit" id="signupButton">Signup</button>
+                </form>
+            </div>
+
+            <div class="card_terms">
+                <span>Already have an account? <a href="login">Login</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            const password = document.getElementById('password').value;
+            if (!checkPasswordStrength(password)) {
+                showError('Password must contain at least 1 lowercase letter, 1 uppercase letter, 1 digit, 1 special character, and be at least 8 characters long.');
+                event.preventDefault();
+            }
+        });
+
+        function checkPasswordStrength(password) {
+            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d@$!%#?&]{8,}$/.test(password);
+        }
+
+        function showError(message) {
+            var errorMessage = document.getElementById('error-message');
+            errorMessage.innerHTML = message;
+            errorMessage.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

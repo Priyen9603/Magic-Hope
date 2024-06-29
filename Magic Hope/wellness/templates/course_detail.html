@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'courses.css' %}">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'profile_view' %}">User Profile</a></li>
+                <li><a href="{% url 'course_list' %}">Courses</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="course-detail">
+            <img src="{{ course.image.url }}" alt="{{ course.title }}">
+            <h1>{{ course.title }}</h1>
+            <p>{{ course.description }}</p>
+            <p><strong>Price:</strong> ${{ course.price }}</p>
+            <button id="buy-button" class="btn">Buy Now</button>
+            <form id="payment-form" style="display: none;">
+                <div id="card-element"></div>
+                <button id="submit" class="btn">Submit Payment</button>
+                <p id="payment-response"></p>
+            </form>
+        </div>
+        <script src="{% static 'js/payment.js' %}"></script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Magic Hope</p>
+    </footer>
+</body>
+</html>

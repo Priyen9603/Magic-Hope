@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Platform</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="profile_view">User Profile</a></li>
+                <li><a href="course_list">Courses</a></li>
+                <li><a href="#">Discussion Forum</a></li>
+                <li><a href="home3">Support</a></li>
+                <li><a href="home1">Counselling</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome to the Mental Wellness Platform</h1>
+            <p>Take control of your mental health and well-being with our resources and community support.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </section>
+        <section class="quote-section">
+            <blockquote>
+                <p>"The best way to predict the future is to create it."</p>
+                <span>- Peter Drucker</span>
+            </blockquote>
+        </section>
+        <section class="features-section">
+            <div class="feature">
+                <div class="icon support-icon"></div>
+                <h2>Support</h2>
+                <p>Get help from our experienced professionals to guide you through your mental wellness journey.</p>
+            </div>
+            <div class="feature">
+                <div class="icon courses-icon"></div>
+                <h2>Courses</h2>
+                <p>Explore our curated courses designed to help you improve your mental health and well-being.</p>
+            </div>
+            <div class="feature">
+                <div class="icon community-icon"></div>
+                <h2>Community</h2>
+                <p>Join our vibrant community for discussions, support, and sharing experiences with others.</p>
+            </div>
+        </section>
+        <section class="testimonials-section">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"This platform has been a game-changer for my mental health. The resources are fantastic and the community is so supportive."</p>
+                <span>– Alex J.</span>
+            </div>
+            <div class="testimonial">
+                <p>"I love the courses offered here. They have helped me develop better coping strategies and improve my well-being."</p>
+                <span>– Jamie L.</span>
+            </div>
+        </section>
+        <section class="resources-section">
+            <h2>Popular Resources</h2>
+            <div class="resource">
+                <h3>Meditation Guide</h3>
+                <p>Learn the basics of meditation and start your practice with our comprehensive guide.</p>
+                <a href="#" class="resource-link">Read More</a>
+            </div>
+            <div class="resource">
+                <h3>Stress Management Tips</h3>
+                <p>Discover effective strategies for managing stress and maintaining your mental health.</p>
+                <a href="#" class="resource-link">Read More</a>
+            </div>
+        </section>
+        <section class="signup-section">
+            <h2>Stay Updated</h2>
+            <p>Sign up for our newsletter to receive the latest updates and wellness tips.</p>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="signup-button">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Magic Hope | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
